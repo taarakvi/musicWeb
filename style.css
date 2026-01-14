@@ -102,11 +102,23 @@ input{
 .songsContainer{
     width: auto;
     color: white;
-    padding:8rem 1rem 1rem 1rem;
+    padding:5rem 1rem 1rem 1rem;
 }
 label{
     text-transform: capitalize;    
     font-weight:600;
+}
+.songsContainer2{
+    width: auto;
+    color: white;
+    /* padding:8rem 1rem 1rem 1rem; */
+    padding: 1rem;
+}
+.songsContainer3{
+    width: auto;
+    color: white;
+    /* padding:8rem 1rem 1rem 1rem; */
+    padding: 1rem;
 }
 .cards1{
     display: flex;
@@ -168,7 +180,7 @@ label{
 
 }
 }
-@media (max-width:425px){
+@media (max-width:375px){
 input{
     padding: 10px;
     font-size:14px;
@@ -179,10 +191,10 @@ input{
 }
 .card{
     height: 300px;
-    width: 260px;
+    width: 300px;
 }
 .picCard1{
     height:240px;
-    width:260px;
+    width:300px;
 }
 }
