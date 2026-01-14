@@ -29,11 +29,12 @@ body{
     filter: brightness(50%) saturate(100%) invert(50%) sepia(100%) saturate(10%) hue-rotate(0deg);
     border-radius:30px;
 }
-.logoIcon label{
+.logoIcon span{
     color: rgb(160, 163, 166);
     font-style: italic;
     text-transform: lowercase;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:sans-serif;
+    font-weight:bold;
 }
 .inputBox{
     display:flex;
@@ -82,6 +83,37 @@ input{
     display: none;
     font-size:30px;
 }
+.barOpt{
+    display: none;
+    
+}
+
+.barOptions{
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 4rem;
+    z-index: 1;
+    color: white;
+    padding: 5px;
+    border-radius:5px;
+    background-color:rgba(145, 127, 144, 0.874);
+    /* border: 1px solid black; */
+    box-shadow: -5px 10px 20px 0px rgb(23, 22, 22);
+    position:fixed;
+    text-transform: capitalize;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.barOptions div:hover{
+    transform: scale(1.1);
+    /* transition:0.5s; */
+}
+
 .boxA div:hover{
     transform: scale(1.1);
     color: white;
@@ -99,32 +131,30 @@ input{
 }
 
 /* section1 */
+.Maincontainer{
+    padding: 5rem 1rem 1rem 1rem;
+}
 .songsContainer{
     width: auto;
     color: white;
-    padding:5rem 1rem 1rem 1rem;
 }
 label{
     text-transform: capitalize;    
     font-weight:600;
+    font-size:20px;
 }
 .songsContainer2{
     width: auto;
     color: white;
-    /* padding:8rem 1rem 1rem 1rem; */
-    padding: 1rem;
 }
 .songsContainer3{
     width: auto;
     color: white;
-    /* padding:8rem 1rem 1rem 1rem; */
-    padding: 1rem;
 }
 .cards1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* gap: 10px; */
 }
 .card{
     height: 300px;
@@ -141,10 +171,12 @@ label{
     background-repeat: no-repeat;
     border-radius: 5px;
     margin-bottom:10px;
+    position: relative;
 }
 .playIcon{
-    position:relative;
-    inset:12rem;
+    position:absolute;
+    right:1rem;
+    bottom: 1rem;
     color: black;
     width: 40px;
     height: 40px;
@@ -163,6 +195,26 @@ label{
     border-radius: 5px;
 }
 
+/* artistcontainer */
+.ArtistContainer{
+    width: auto;
+}
+.artistBoxes{
+    /* width: auto; */
+    display: flex;
+    /* overflow: auto; */
+}
+.artistBox{
+    width: 300px;
+    height: 200px;
+    border:1px solid red;
+}
+
+@media(min-width:950px){
+    .barOptions{
+    display: none;
+}
+}
 @media (max-width:950px){
 .sect2 .boxA{
     display: none;
@@ -177,7 +229,12 @@ label{
     flex-wrap: nowrap;
     overflow:auto;
     scrollbar-width: none;
-
+}
+.artistBoxes{
+    /* width: 100vh; */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
 }
 }
 @media (max-width:375px){
