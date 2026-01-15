@@ -41,7 +41,7 @@ body{
     align-items: center;
     width: 50%;
     border-radius: 50px;
-    background-color: rgb(32, 33, 34);
+    background-color: rgba(111, 116, 120, 0.877);
     margin-right:10px;
     overflow: hidden;
     /* border: 1px solid green; */
@@ -54,7 +54,8 @@ input{
     width:100%;
     border: none;
     background: transparent;
-    color: white;
+    font-family: sans-serif;
+    color: black;
     /* border: 1px solid red; */
 }
 .search i{
@@ -95,9 +96,9 @@ input{
     top: 4rem;
     z-index: 1;
     color: white;
-    padding: 5px;
+    padding:10px;
     border-radius:5px;
-    background-color:rgba(145, 127, 144, 0.874);
+    background-color:rgb(111, 116, 120);
     /* border: 1px solid black; */
     box-shadow: -5px 10px 20px 0px rgb(23, 22, 22);
     position:fixed;
@@ -141,7 +142,9 @@ input{
 label{
     text-transform: capitalize;    
     font-weight:600;
-    font-size:20px;
+    font-size:22px;
+    color: white;
+    font-family: sans-serif;
 }
 .songsContainer2{
     width: auto;
@@ -197,18 +200,33 @@ label{
 
 /* artistcontainer */
 .ArtistContainer{
-    width: auto;
+    width:auto;
 }
 .artistBoxes{
-    /* width: auto; */
+    width: auto;
     display: flex;
-    /* overflow: auto; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* overflow:auto;
+    scrollbar-width: none; */
 }
 .artistBox{
-    width: 300px;
-    height: 200px;
-    border:1px solid red;
+    width:150px;
+    height:150px;
+    border:2px solid rgb(111, 116, 120);
+    border-radius:50%;
 }
+.artistBox .img{
+    border-radius: 50%;
+    width:150px;
+    height:150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 
 @media(min-width:950px){
     .barOptions{
@@ -230,12 +248,12 @@ label{
     overflow:auto;
     scrollbar-width: none;
 }
-.artistBoxes{
-    /* width: 100vh; */
+
+/* .artistBoxes{
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
-}
+} */
 }
 @media (max-width:375px){
 input{
