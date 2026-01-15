@@ -33,7 +33,7 @@ body{
     color: rgb(160, 163, 166);
     font-style: italic;
     text-transform: lowercase;
-    font-family:sans-serif;
+    font-family:serif;
     font-weight:bold;
 }
 .inputBox{
@@ -58,8 +58,12 @@ input{
     color: black;
     /* border: 1px solid red; */
 }
+input::placeholder{
+    color:black;
+    opacity:0.5;
+}
 .search i{
-    padding: 12px;
+    padding: 12.5px;
     font-size: 22px;
     background-color: rgba(255, 85, 0, 0.688);
     border-bottom-right-radius: 50%;
@@ -165,6 +169,10 @@ label{
     padding: 10px;
     text-transform: capitalize;
 }
+.card:hover{
+     transform:scale(.9);
+    transition:0.9s;
+}
 .picCard1{
     height:240px;
     width:250px;
@@ -172,7 +180,7 @@ label{
     background-size: cover;    
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 5px;
+    border-radius:10px;
     margin-bottom:10px;
     position: relative;
 }
@@ -190,12 +198,9 @@ label{
     z-index:0;
     border-radius: 50%;
 }
-.playIcon:hover{
-    display: block;
-}
 .card:hover{
     background-color: rgb(34, 33, 33);
-    border-radius: 5px;
+    border-radius:10px;
 }
 
 /* artistcontainer */
@@ -208,6 +213,7 @@ label{
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem;
+    padding:1rem 0 1rem 0;
     /* overflow:auto;
     scrollbar-width: none; */
 }
@@ -217,6 +223,10 @@ label{
     border:2px solid rgb(111, 116, 120);
     border-radius:50%;
 }
+.artistBox:hover{
+     transform:scale(1.1);
+    transition:0.5s;
+}
 .artistBox .img{
     border-radius: 50%;
     width:150px;
@@ -224,6 +234,115 @@ label{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+/* playlistBox */
+.playlistContainer{
+    color: white;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content:space-between;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.playlists{
+    width:50%;
+    height:70vh;
+    overflow: auto;
+    /* scrollbar-width:; */
+    border: 1px solid rgb(111, 116, 120);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color:rgba(50, 49, 49, 0.488);
+    border-radius:10px;
+    gap: 1rem;
+}
+::-webkit-scrollbar{
+    width:2px;
+}
+::-webkit-scrollbar-track{
+    /* background-color:yellow; */
+    border-bottom-right-radius:50px;
+    border-top-right-radius:50px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(111, 116, 120);
+    border-radius:10px;
+}
+.songName{
+    font-size: large;
+    font-weight: bold;
+    font-family: serif;
+    text-transform: capitalize;
+}
+.playlists .songBox{
+    display: flex;
+    height: 100px;
+}
+.img-in-playlist{
+    width:100px;
+    height:100px;
+    background-image:url("img-source/jubin2.jpg");
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius:10px;
+    border: 1px solid rgb(111, 116, 120);
+    position: relative;
+}
+.PLplayIcon{
+    position:absolute;
+    right:.5rem;
+    bottom:.5rem;
+    color: black;
+    width:20px;
+    height:20px;
+    text-align: center;
+    align-content: center;
+    font-size:x-small;
+    background-color: rgb(236, 11, 11);
+    z-index:0;
+    border-radius: 50%;
+}
+
+
+.img-in-playlist:hover{
+    transform:scale(1.1);
+    transition:0.9s;
+}
+.songDetails{
+    width: 250px;
+    padding:10px;
+    overflow: hidden;
+}
+.songDetails p{
+    padding: 3px;
+}
+.musicLogo{
+    width:40%;
+    border: 1px solid rgb(111, 116, 120);
+    height:70vh;
+    align-content: center;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color:rgba(50, 49, 49, 0.488);
+    border-radius:10px;
+}
+.musicLogo .mLogoPic{
+    width: 250px;
+    height: 200px;
+    background-image:url("img-source/tkLogo.png");
+    filter: brightness(50%) saturate(100%) invert(50%) sepia(100%) saturate(10%) hue-rotate(0deg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
 }
 
 
@@ -239,6 +358,15 @@ label{
 }
 .barIcon{
     display: block;
+}
+}
+@media(max-width:730px){
+.playlists{
+    width:100%;
+}
+.musicLogo{
+    width:100%;
+    
 }
 }
 @media (max-width:670px){
