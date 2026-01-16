@@ -33,16 +33,42 @@ buttun.addEventListener("click",()=>{
     let musicBox = document.querySelectorAll(".musicBox")
     let plyrCmain = document.querySelector(".playerContainerMain")
     let section1 = document.querySelector("section1")
+    let plcsong = document.querySelector(".plcsong")
+    let plcSinger = document.querySelector(".plcSinger")
+    let plcWriter = document.querySelector(".plcWriter")
+    let pic = document.querySelectorAll(".songImg")
     musicBox.forEach(element =>{
-        // console.log(element.getHTML())
         element.addEventListener("click",()=>{
+            // console.log(element.innerHTML)
+            console.log(element.textContent)
+            let song = element.querySelector(".songName")
+            let singer = element.querySelector(".singerName")
+            let writer = element.querySelector(".writerName")
+            // for image changer
+            let plcImg = document.querySelector(".plcImg")
+            pic.forEach(element =>{
+                element.addEventListener("click",()=>{
+                let imgUrl = element.style.backgroundImage
+                console.log(imgUrl)
+                plcImg.style.backgroundImage = imgUrl 
+                })
+            })
+
+
+            plcsong.textContent = song.textContent
+            plcSinger.textContent = singer.textContent
+            plcWriter.textContent = writer.textContent
+            // toggling
             plyrCmain.style.display="block"
             section1.style.display="none"
         })
     })
+    // backButton in player box
     let plyrBackB = document.querySelector(".plyrBackB")
     plyrBackB.addEventListener("click",()=>{
         plyrCmain.style.display="none"
         section1.style.display="block"
     })
  }cardSect()
+history.scrollRestoration = "manual";
+window.onload = () => window.scrollTo(0,0);
