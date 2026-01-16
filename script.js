@@ -1,16 +1,22 @@
 let music = document.getElementById("music")
 let buttun = document.querySelector("button")
+    let play = document.getElementById("play")
+    let pouse = document.getElementById("pouse")
+    pouse.style.display="none"
 buttun.addEventListener("click",()=>{
     if(music.paused){
         music.play();
-        buttun.textContent = "pause"
+        play.style.display="none"
+        pouse.style.display="block"
     }else{
         music.pause();
-        buttun.textContent = "play"
+        play.style.display="block"
+        pouse.style.display="none"
     }
 })
 
 // heder section
+// barIcon toggle
  function barSect(){
     let barOpt = document.querySelector(".barOpt")
     let barIcon = document.querySelector(".barIcon")
@@ -25,7 +31,18 @@ buttun.addEventListener("click",()=>{
 
  function cardSect(){
     let cards = document.querySelectorAll(".card")
+    let plyrCmain = document.querySelector(".playerContainerMain")
+    let section1 = document.querySelector("section1")
     cards.forEach(element =>{
-        console.log(element.getHTML())
+        // console.log(element.getHTML())
+        element.addEventListener("click",()=>{
+            plyrCmain.style.display="block"
+            section1.style.display="none"
+        })
+    })
+    let plyrBackB = document.querySelector(".plyrBackB")
+    plyrBackB.addEventListener("click",()=>{
+        plyrCmain.style.display="none"
+        section1.style.display="block"
     })
  }cardSect()
