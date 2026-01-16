@@ -30,10 +30,10 @@ buttun.addEventListener("click",()=>{
  }barSect()
 
  function cardSect(){
-    let cards = document.querySelectorAll(".card")
+    let musicBox = document.querySelectorAll(".musicBox")
     let plyrCmain = document.querySelector(".playerContainerMain")
     let section1 = document.querySelector("section1")
-    cards.forEach(element =>{
+    musicBox.forEach(element =>{
         // console.log(element.getHTML())
         element.addEventListener("click",()=>{
             plyrCmain.style.display="block"
