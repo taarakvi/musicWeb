@@ -164,6 +164,10 @@ label{
     padding: 10px;
     text-transform: capitalize;
 }
+a{
+    color: white;
+    text-decoration: none;
+}
 .card:hover{
     transform:scale(.9);
     transition:0.9s;
@@ -372,7 +376,6 @@ label{
     justify-content:center;
     /* border-bottom:1px solid red; */
     background:linear-gradient(rgba(0, 0, 0, 0.365),rgba(0, 0, 255, 0.758),rgba(0, 0, 0, 0.365));
-    /* background-color: rgb(13, 13, 140); */
     padding: 1rem;
 }
 .plcImg{
