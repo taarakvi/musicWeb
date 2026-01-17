@@ -36,7 +36,6 @@ buttun.addEventListener("click",()=>{
     let plcsong = document.querySelector(".plcsong")
     let plcSinger = document.querySelector(".plcSinger")
     let plcWriter = document.querySelector(".plcWriter")
-    let pic = document.querySelectorAll(".songImg")
     musicBox.forEach(element =>{
         element.addEventListener("click",()=>{
             // console.log(element.innerHTML)
@@ -45,6 +44,7 @@ buttun.addEventListener("click",()=>{
             let singer = element.querySelector(".singerName")
             let writer = element.querySelector(".writerName")
             // for image changer
+            let pic = document.querySelectorAll(".songImg")
             let plcImg = document.querySelector(".plcImg")
             pic.forEach(element =>{
                 element.addEventListener("click",()=>{
@@ -58,7 +58,7 @@ buttun.addEventListener("click",()=>{
             plcsong.textContent = song.textContent
             plcSinger.textContent = singer.textContent
             plcWriter.textContent = writer.textContent
-            // toggling
+            //page toggling
             plyrCmain.style.display="block"
             section1.style.display="none"
         })
@@ -70,5 +70,4 @@ buttun.addEventListener("click",()=>{
         section1.style.display="block"
     })
  }cardSect()
-history.scrollRestoration = "manual";
-window.onload = () => window.scrollTo(0,0);
+
