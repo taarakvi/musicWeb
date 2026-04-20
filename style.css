@@ -368,9 +368,7 @@ a{
     display:none;
     /* border: 1pc solid blue; */
 }
-.playerContainerMain .plyrBackB{
-    font-size:30px;
-}
+
 .plcBox1{
     margin-top:1rem;
     display:flex;
@@ -445,12 +443,112 @@ a{
     transform:scale(1.1);
     transition:0.5s;
 }
+.plyrBackB{
+    margin:1rem;
+    font-size:30px;
+}
 .plyrBackB i:hover{
     color:red;
     transform:scale(1.4);
     transition:0.9s;
     cursor:pointer;
 }
+
+/* pl-section 2*/
+.player-section-main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid red; */
+}
+.playerSecondMain{
+    height:60vh;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    width:100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.365),rgba(0, 0, 255, 0.758),rgba(0, 0, 0, 0.365));
+}
+.pl-section{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
+    height: auto;
+    /* border: 2px solid red; */
+}
+
+.pl-box-img{
+    width:300px;
+    height:300px;
+    border:1px solid rgb(111, 116, 120);
+    background-image:url("img-source/vishal m.jpg");
+    background-size: cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    border-radius:10px;
+}
+.pl-box-co{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    width:500px;
+    /* height:100%; */
+    border:1px solid rgb(111, 116, 120);
+    background-color:rgba(118, 120, 121, 0.204);
+    border-radius: 10px;
+    padding:5px;
+    overflow: auto;
+}
+.m-td{
+    height:.5rem;
+    background-color:white;
+    border: 3px solid rgb(96, 102, 96);
+    width: 300px;
+    margin-bottom: 1rem;
+    border-radius:3px;
+}
+.pl-section .pl-box{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    gap:10px;
+    align-items: center;
+    color: white;
+    /* border: 2px red solid; */
+    padding: 5px;
+    font-size:5rem;
+    /* width:100%; */
+    
+}
+.pl-box span{
+    display:flex;
+    gap:3rem;
+    font-size:50px;
+}
+.song-rn{
+    width: 300px;
+    /* height:1rem; */
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content:space-between;
+}
+
+.song-rn i{
+    font-size:20px;
+    color:rgb(175, 169, 169);
+}
+
+.song-time{
+    /* border:1px solid white; */
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
 
 @media(min-width:950px){
     .barOptions{
@@ -499,6 +597,10 @@ input{
 .picCard1{
     height:240px;
     width:300px;
+}
+.m-td{
+    border: 3px solid green;
+    width: 250px;
 }
 }
 @media (max-width:320px){
