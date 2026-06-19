@@ -407,14 +407,21 @@ a{
     align-items:center;
     flex-wrap: wrap;
     font-size:30px;
+    text-overflow: initial;
     gap:5px;
     width: 100%;
     /* border: 1px solid yellowgreen; */
+    text-align:right;
 }
 .plcsdetail p{
     /* border: 1px solid red; */
     opacity:0.5;
-    font-size: 22px;
+    font-size:20px;
+    font-family: serif;
+}
+.plcsdetail h3{
+    /* border: 1px solid red; */
+    font-size:25px;
     font-family: serif;
 }
 
@@ -433,14 +440,20 @@ a{
     width:8rem;
     background-color: green;
     border: none;
-    font-size:30px;
-    border-radius:10px;
+    font-size:20px;
+    border-radius:8px;
     padding:3px;
     box-shadow:0px 5px 10px 0px black;
     cursor:pointer;
+    font-weight: 600;
+     font-family: serif;
 }
 .plcButton button:hover{
     transform:scale(1.1);
+    transition:0.5s;
+}
+.plcButton button:active{
+    transform:scale(1.4);
     transition:0.5s;
 }
 .plyrBackB{
@@ -454,9 +467,9 @@ a{
     cursor:pointer;
 }
 
-/* pl-section 2*/
+/*MUSIC PLAYER*/
 .player-section-main{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -517,8 +530,8 @@ a{
     justify-content:center;
     gap:10px;
     align-items: center;
-    color: rgb(131, 20, 20);
-    /* border: 2px red solid; */
+    color:white;
+    /* border: 1px gray solid; */
     padding: 5px;
     font-size:5rem;
     /* width:100%; */
@@ -550,7 +563,16 @@ a{
     justify-content: space-between;
     padding: 1rem;
 }
-
+.plyrBackB2{
+    margin:1rem;
+    font-size:30px;
+}
+.plyrBackB2 i:hover{
+    color:red;
+    transform:scale(1.4);
+    transition:0.9s;
+    cursor:pointer;
+}
 
 @media(min-width:950px){
     .barOptions{
@@ -600,9 +622,14 @@ input{
     height:240px;
     width:300px;
 }
-.m-td{
-    /* border: 3px solid green; */
-    /* width: 250px; */
+.plcsdetail h3{
+    font-size:15px;
+    font-family: serif;
+}
+.plcsdetail p{
+    opacity:0.5;
+    font-size:15px;
+    font-family: serif;
 }
 }
 @media (max-width:320px){
