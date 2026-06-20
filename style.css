@@ -556,7 +556,9 @@ a{
     font-size:20px;
     color:rgb(175, 169, 169);
 }
-
+.fa-heart:active{
+    /* background-color:red; */
+}
 .song-time{
     /* border:1px solid white; */
     display:flex;
