@@ -42,6 +42,8 @@
             pause.style.display = "none";
             play.style.display = "block"
             let music = element.querySelector(".music");
+            let timer;
+            // let pauseTime = 0;
 
         play.addEventListener("click",()=>{
                 console.log("song.play")
@@ -54,25 +56,39 @@
                 document.querySelectorAll(".music").forEach(song => {
                     song.pause();
                     song.currentTime = 0 ;
-                    console.log(music.duration)
+                    console.log(Math.floor(music.duration))
                     // lastTime
                     let minut = Math.floor(music.duration/60)
                     let second = Math.floor(music.duration%60)
                     lastTime.textContent = (`${minut}:${second}`)
+                    clearInterval(timer);
                 });
                     music.play();
                     // previus time
                     let preTime = document.querySelector(".preTime")
                     if(music.played){
-                       let num = 1;
-                       let preMinut=0;
-                       let preSecond=0;
-                       let timer = setInterval(()=>{
-                        console.log(num)
-                        preTime.textContent = num;
-                        if(num === music.duration){
+                            let num = 1;
+                            let preMinut=0;
+                            let preSecond=1;
+                            let xt = 1
+                        timer = setInterval(()=>{
+                            // console.log(num)
+                            preTime.textContent = (`${preMinut}:${preSecond}`);
+                            if(xt === 60){
+                                console.log("60 = 1")
+                                preMinut++;
+                                preSecond = 0;
+                                xt = 1
+                            }preSecond++
+
+                        if(num === Math.floor(music.duration)){
                             clearInterval(timer);
+                            pause.style.display = "none";
+                            play.style.display = "block"
                         } num++;
+                          xt++;
+                        //   pauseTime++;
+
                        },1000);
                     
                     }
@@ -88,9 +104,12 @@
             if (music.played) {
                 document.querySelectorAll(".music").forEach(song => {
                     song.pause();
-                    // song.currentTime = 0 ;
+                    // song.currentTime = pauseTime;
+                    clearInterval(timer);
+                    console.log("pause")
                 });
                     music.pause();
+                    
             }
         })
     }audio()
@@ -152,4 +171,30 @@
                 plyrCmain.style.display="block"
                 plyCmain2.style.display ="none"
             })
+// REPEATAION AND HEART
+            let heart1 = document.getElementById("fa-heart1")
+            let heart2 = document.getElementById("fa-heart2")
+            let repeat1 = document.getElementById("fa-repeat1")
+            let repeat2 = document.getElementById("fa-repeat2")
+            heart2.style.display="none"
+            repeat2.style.display="none"
+            heart1.addEventListener("click",()=>{
+                heart2.style.display="block"
+                heart1.style.display="none"
+            })
+            heart2.addEventListener("click",()=>{
+                heart1.style.display="block"
+                heart2.style.display="none"
+            })
+            repeat1.addEventListener("click",()=>{
+                repeat2.style.display="block"
+                repeat1.style.display="none"
+            })
+            repeat2.addEventListener("click",()=>{
+                repeat1.style.display="block"
+                repeat2.style.display="none"
+            })
+
             }musicP()
+        
+    
