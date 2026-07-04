@@ -567,11 +567,9 @@ a{
 }
 .song-ll{
     width: 50%;
-   /* cursor: pointer; */
     display: flex;
     justify-content:space-between;
     align-items: center;
-    overflow:scroll;
     background-position: center;
 }
 .song-ll i{  
