@@ -72,6 +72,7 @@
                             let preSecond=1;
                             let xt = 1
                         timer = setInterval(()=>{
+                           
                             // console.log(num)
                             preTime.textContent = (`${preMinut}:${preSecond}`);
                             if(xt === 60){
