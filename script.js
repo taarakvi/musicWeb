@@ -21,38 +21,33 @@
     let plcsong = document.querySelector(".plcsong")
     let plcSinger = document.querySelector(".plcSinger")
     let plcWriter = document.querySelector(".plcWriter")
-
+     let timer;
     musicBox.forEach((element,index) => {
         element.addEventListener("click",()=>{
-            // console.log(element.innerHTML)
-            // console.log(element.textContent)
-            // console.log(index)
             let song = element.querySelector(".songName")
             let singer = element.querySelector(".singerName")
             let writer = element.querySelector(".writerName")
             let picture = element.querySelector(".songImg")
             // console.log(writer)
-
+            clearInterval(timer);
 // for musics changer
     function audio(){
-
             // console.log(index)
             let play = document.getElementById("play")
             let pause = document.getElementById("pouse")
             pause.style.display = "none";
             play.style.display = "block"
             let music = element.querySelector(".music");
-            let timer;
-            // let pauseTime = 0;
+          
 
         play.addEventListener("click",()=>{
                 console.log("song.play")
                 play.style.display = "none"
                 pause.style.display = "block"
                 let lastTime = document.querySelector(".lastTime")
-                // console.log(lastTime)
+              
 
-            if (music.paused) {
+            if (music.paused){
                 document.querySelectorAll(".music").forEach(song => {
                     song.pause();
                     song.currentTime = 0 ;
@@ -66,13 +61,16 @@
                     music.play();
                     // previus time
                     let preTime = document.querySelector(".preTime")
+                    // song.currentTime = 0;
                     if(music.played){
                             let num = 1;
                             let preMinut=0;
                             let preSecond=1;
-                            let xt = 1
-                        timer = setInterval(()=>{
-                           
+                            let xt = 1;
+
+                    function timing(){
+                            clearInterval(timer);
+                          timer = setInterval(()=>{
                             // console.log(num)
                             preTime.textContent = (`${preMinut}:${preSecond}`);
                             if(xt === 60){
@@ -81,7 +79,7 @@
                                 preSecond = 0;
                                 xt = 1
                             }preSecond++
-
+                            console.log(music.duration)
                         if(num === Math.floor(music.duration)){
                             clearInterval(timer);
                             pause.style.display = "none";
@@ -90,10 +88,21 @@
                           xt++;
                         //   pauseTime++;
 
-                       },1000);
-                    
+                       },1000);  
+                    }timing()
+                        
                     }
 
+            }
+            else{
+                if(music.played){
+                   document.querySelectorAll(".music").forEach(song => {
+                    song.pause();
+                    song.currentTime = 0 ;
+                    console.log("during the playing")
+                    clearInterval(timer);
+                    });
+                }
             }
             })
 
@@ -105,7 +114,7 @@
             if (music.played) {
                 document.querySelectorAll(".music").forEach(song => {
                     song.pause();
-                    // song.currentTime = pauseTime;
+                    song.currentTime = 0;
                     clearInterval(timer);
                     console.log("pause")
                 });
