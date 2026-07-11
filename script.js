@@ -21,18 +21,16 @@
     let plcsong = document.querySelector(".plcsong")
     let plcSinger = document.querySelector(".plcSinger")
     let plcWriter = document.querySelector(".plcWriter")
-     let timer;
+    let timer;
     musicBox.forEach((element,index) => {
         element.addEventListener("click",()=>{
             let song = element.querySelector(".songName")
             let singer = element.querySelector(".singerName")
             let writer = element.querySelector(".writerName")
             let picture = element.querySelector(".songImg")
-            // console.log(writer)
             clearInterval(timer);
 // for musics changer
     function audio(){
-            // console.log(index)
             let play = document.getElementById("play")
             let pause = document.getElementById("pouse")
             pause.style.display = "none";
@@ -79,20 +77,17 @@
                                 preSecond = 0;
                                 xt = 1
                             }preSecond++
-                            console.log(music.duration)
+                            // console.log(music.duration)
                         if(num === Math.floor(music.duration)){
                             clearInterval(timer);
                             pause.style.display = "none";
                             play.style.display = "block"
                         } num++;
                           xt++;
-                        //   pauseTime++;
-
                        },1000);  
                     }timing()
                         
                     }
-
             }
             else{
                 if(music.played){
