@@ -517,31 +517,21 @@ a{
     overflow: auto;
 }
 .m-td{
-    height:.5rem;
+    height:.4rem;
     /* background-color:white; */
-    border: 3px solid rgb(96, 102, 96);
+    border: 1px solid rgb(96, 102, 96);
     width:50%;
     margin-bottom: 1rem;
     border-radius:3px;
-   overflow: hidden;
+    overflow: hidden;
 }
 
 .m-td1{
-    width: 100%;
+    width:0;
     height:100%;
-    background-color: rgb(255, 0, 234);
-   animation:speadLine 0s ease-in  alternate;
-   position:relative;
+    background-color: white;
 }
 
-@keyframes speadLine{
-    from{
-        right:20rem;
-    }
-    to{
-        right:0;
-    }
-}
 .pl-section .pl-box{
     display:flex;
     flex-direction: column;

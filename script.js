@@ -39,17 +39,17 @@
           
 
         play.addEventListener("click",()=>{
-                console.log("song.play")
+                // console.log("song.play")
                 play.style.display = "none"
                 pause.style.display = "block"
                 let lastTime = document.querySelector(".lastTime")
-              
+                let mdt = document.querySelector(".m-td1")
 
             if (music.paused){
                 document.querySelectorAll(".music").forEach(song => {
                     song.pause();
                     song.currentTime = 0 ;
-                    console.log(Math.floor(music.duration))
+                    // console.log(Math.floor(music.duration))
                     // lastTime
                     let minut = Math.floor(music.duration/60)
                     let second = Math.floor(music.duration%60)
@@ -59,25 +59,24 @@
                     music.play();
                     // previus time
                     let preTime = document.querySelector(".preTime")
-                    // song.currentTime = 0;
                     if(music.played){
-                            let num = 1;
+                            let num = 0;
                             let preMinut=0;
-                            let preSecond=1;
-                            let xt = 1;
+                            let preSecond=0;
+                            let xt = 0;
 
                     function timing(){
                             clearInterval(timer);
                           timer = setInterval(()=>{
+                            mdt.style.width = (music.currentTime/music.duration*100)+"%"
                             // console.log(num)
                             preTime.textContent = (`${preMinut}:${preSecond}`);
                             if(xt === 60){
-                                console.log("60 = 1")
                                 preMinut++;
                                 preSecond = 0;
-                                xt = 1
+                                xt = 0
                             }preSecond++
-                            // console.log(music.duration)
+
                         if(num === Math.floor(music.duration)){
                             clearInterval(timer);
                             pause.style.display = "none";
@@ -94,7 +93,6 @@
                    document.querySelectorAll(".music").forEach(song => {
                     song.pause();
                     song.currentTime = 0 ;
-                    console.log("during the playing")
                     clearInterval(timer);
                     });
                 }
@@ -102,7 +100,7 @@
             })
 
         pause.addEventListener("click",()=>{
-                console.log("song.pause")
+                // console.log("song.pause")
                 pause.style.display = "none"
                 play.style.display = "block"
 
@@ -111,7 +109,7 @@
                     song.pause();
                     song.currentTime = 0;
                     clearInterval(timer);
-                    console.log("pause")
+                    // console.log("pause")
                 });
                     music.pause();
                     
@@ -123,7 +121,7 @@
         function imgChanger(){
                 let plcImg = document.querySelector(".plcImg")
                 let imgUrl = picture.style.backgroundImage
-                console.log(imgUrl)
+                // console.log(imgUrl)
                 plcImg.style.backgroundImage = imgUrl 
         }imgChanger();
 
