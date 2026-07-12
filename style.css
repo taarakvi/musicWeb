@@ -627,11 +627,11 @@ input{
 }
 .card{
     height: 300px;
-    width: 300px;
+    width: 250px;
 }
 .picCard1{
     height:240px;
-    width:300px;
+    width:250px;
 }
 .plcsdetail h3{
     font-size:15px;
