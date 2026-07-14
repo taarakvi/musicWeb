@@ -519,7 +519,7 @@ a{
 .m-td{
     height:.4rem;
     /* background-color:white; */
-    border: 1px solid rgb(96, 102, 96);
+    border: 2px solid rgb(96, 102, 96);
     width:50%;
     margin-bottom: 1rem;
     border-radius:3px;
@@ -583,6 +583,48 @@ a{
     transform:scale(1.4);
     transition:0.9s;
     cursor:pointer;
+}
+/* SECTION MUSIC-BOL */
+.music-boll{
+    display: none;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    cursor: pointer;
+    border: 1px solid white;
+    padding:5px;
+    background: conic-gradient(
+        red,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        magenta,
+        red
+    );
+    
+    animation:rotate 10s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.mbl-pic{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    position:relative;
 }
 
 @media(min-width:950px){

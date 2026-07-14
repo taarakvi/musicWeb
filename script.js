@@ -13,7 +13,7 @@
    })
  }barSect()
 
-
+    let mBoll = document.querySelector(".music-boll")
  function cardSect(){
     let musicBox = document.querySelectorAll(".musicBox")
     let plyrCmain = document.querySelector(".playerContainerMain")
@@ -22,6 +22,7 @@
     let plcSinger = document.querySelector(".plcSinger")
     let plcWriter = document.querySelector(".plcWriter")
     let timer;
+    
     musicBox.forEach((element,index) => {
         element.addEventListener("click",()=>{
             let song = element.querySelector(".songName")
@@ -44,20 +45,20 @@
                 pause.style.display = "block"
                 let lastTime = document.querySelector(".lastTime")
                 let mdt = document.querySelector(".m-td1")
+                mBoll.style.display = "block"
 
             if (music.paused){
                 document.querySelectorAll(".music").forEach(song => {
                     song.pause();
                     song.currentTime = 0 ;
-                    // console.log(Math.floor(music.duration))
-                    // lastTime
+            // lastTime
                     let minut = Math.floor(music.duration/60)
                     let second = Math.floor(music.duration%60)
                     lastTime.textContent = (`${minut}:${second}`)
                     clearInterval(timer);
                 });
                     music.play();
-                    // previus time
+            // previus time
                     let preTime = document.querySelector(".preTime")
                     if(music.played){
                             let num = 0;
@@ -67,9 +68,10 @@
 
                     function timing(){
                             clearInterval(timer);
-                          timer = setInterval(()=>{
+                        timer = setInterval(()=>{
+                            // musicLine
                             mdt.style.width = (music.currentTime/music.duration*100)+"%"
-                            // console.log(num)
+                            // minut and second
                             preTime.textContent = (`${preMinut}:${preSecond}`);
                             if(xt === 60){
                                 preMinut++;
@@ -81,6 +83,7 @@
                             clearInterval(timer);
                             pause.style.display = "none";
                             play.style.display = "block"
+                            mBoll.style.display = "none"
                         } num++;
                           xt++;
                        },1000);  
@@ -103,6 +106,7 @@
                 // console.log("song.pause")
                 pause.style.display = "none"
                 play.style.display = "block"
+                mBoll.style.display = "none"
 
             if (music.played) {
                 document.querySelectorAll(".music").forEach(song => {
@@ -125,7 +129,7 @@
                 plcImg.style.backgroundImage = imgUrl 
         }imgChanger();
 
-// img changer in music player
+// img changer in music player(main)
         function mainPic(){
                 let plcB = document.querySelector(".plcButton")
             plcB.addEventListener("click",()=>{
@@ -135,6 +139,20 @@
                 plbImg.style.backgroundImage = imgUrl 
             })
         }mainPic()
+// music-boll img changer & page changer
+        function musicBoll(){
+                let mblPic = document.querySelector(".mbl-pic")
+                let imgUrl = picture.style.backgroundImage
+                mblPic.style.backgroundImage = imgUrl 
+                let mBoll = document.querySelector(".music-boll")
+                let plyrCmain = document.querySelector(".playerContainerMain")
+                let section1 = document.querySelector("section1")
+                mBoll.addEventListener("click",()=>{
+                    document.querySelector(".mainPlayer").style.display = "block"
+                    plyrCmain.style.display = "none"
+                    section1.style.display = "none"
+                })
+        }musicBoll()
 // details changer
             plcsong.textContent = song.textContent
             plcSinger.textContent = singer.textContent
@@ -158,6 +176,7 @@
             let plyrCmain = document.querySelector(".playerContainerMain")
             let plyCmain2 = document.querySelector(".mainPlayer")
             plyCmain2.style.display = "none"
+            // mBoll.style.display = "none"
                 plcB.addEventListener("click",()=>{
                     plyrCmain.style.display = "none"
                     plyCmain2.style.display = "block"            
