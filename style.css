@@ -84,6 +84,7 @@ input::placeholder{
     align-items: center;
     gap:1rem;
 }
+
 .barIcon{
     display: none;
     font-size:30px;
@@ -115,7 +116,6 @@ input::placeholder{
 }
 .barOptions div:hover{
     transform: scale(1.1);
-    /* transition:0.5s; */
 }
 
 .boxA div:hover{
@@ -200,9 +200,10 @@ a{
     background-color: rgb(11, 236, 11);
     z-index:0;
     border-radius: 50%;
+    animation: saddowAnim 2s ease-in infinite alternate;
 }
+
 .songName{
-    /* height:30px; */
     width:100%;
     white-space:nowrap;
     overflow: hidden;
@@ -233,8 +234,6 @@ a{
     flex-wrap: wrap;
     gap: 1rem;
     padding:1rem 0 1rem 0;
-    /* overflow:auto;
-    scrollbar-width: none; */
 }
 .artistBox{
     width:150px;
@@ -255,7 +254,7 @@ a{
     background-position: center;
 }
 
-/* playlistBox */
+/* playlist cards */
 .playlistContainer{
     /* border: 1px solid blue; */
     display: flex;
@@ -269,7 +268,6 @@ a{
     width:50%;
     height:70vh;
     overflow: auto;
-    /* scrollbar-width:; */
     border: 1px solid rgb(111, 116, 120);
     display: flex;
     flex-direction: column;
@@ -282,7 +280,6 @@ a{
     width:2px;
 }
 ::-webkit-scrollbar-track{
-    /* background-color:yellow; */
     border-bottom-right-radius:50px;
     border-top-right-radius:50px;
 }
@@ -340,6 +337,9 @@ a{
 .songDetails p{
     padding: 3px;
 }
+.songDetails .singerName,.writerName{
+    opacity: 0.5;
+}
 .musicLogo{
     width:40%;
     border: 1px solid rgb(111, 116, 120);
@@ -366,7 +366,6 @@ a{
 /* player */
 .playerContainerMain{
     display:none;
-    /* border: 1pc solid blue; */
 }
 
 .plcBox1{
@@ -441,21 +440,25 @@ a{
     background-color: green;
     border: none;
     font-size:20px;
-    border-radius:8px;
+    border-radius:10px;
     padding:3px;
     box-shadow:0px 5px 10px 0px black;
     cursor:pointer;
     font-weight: 600;
      font-family: serif;
+    animation: saddowAnim 2s ease-in infinite alternate;
 }
-.plcButton button:hover{
-    transform:scale(1.1);
-    transition:0.5s;
+@keyframes saddowAnim{
+    from{
+        transform:scale(0.8);
+        transition:0.5s;
+    }
+    to{
+        transform:scale(1);
+        transition:0.5s;
+    }
 }
-.plcButton button:active{
-    transform:scale(1.4);
-    transition:0.5s;
-}
+
 .plyrBackB{
     margin:1rem;
     font-size:30px;
@@ -469,16 +472,12 @@ a{
 
 /*MUSIC PLAYER*/
 .player-section-main{
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border:1px solid red; */
 }
 .playerSecondMain{
     height:60vh;
-    /* display: flex; */
-    /* justify-content: center; */
     align-items: center;
     width:100%;
     background:linear-gradient(rgba(0, 0, 0, 0.365),rgba(0, 0, 255, 0.758),rgba(0, 0, 0, 0.365));
@@ -509,7 +508,6 @@ a{
     justify-content: center;
     gap:10px;
     width:500px;
-    /* height:100%; */
     border:1px solid rgb(111, 116, 120);
     background-color:rgba(118, 120, 121, 0.204);
     border-radius: 10px;
@@ -518,7 +516,6 @@ a{
 }
 .m-td{
     height:.4rem;
-    /* background-color:white; */
     border: 2px solid rgb(96, 102, 96);
     width:50%;
     margin-bottom: 1rem;
@@ -539,11 +536,8 @@ a{
     gap:10px;
     align-items: center;
     color:white;
-    /* border: 1px gray solid; */
     padding: 5px;
-    font-size:5rem;
-    /* width:100%; */
-    
+    font-size:5rem;    
 }
 .pl-box .psn{
     display:flex;
@@ -569,7 +563,6 @@ a{
 }
 
 .song-time{
-    /* border:1px solid white; */
     display:flex;
     justify-content: space-between;
     padding: 1rem;
