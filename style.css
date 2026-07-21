@@ -527,6 +527,9 @@ a{
     width:0;
     height:100%;
     background-color: white;
+    /* border-right: 4px solid rgb(247, 0, 255);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px; */
 }
 
 .pl-section .pl-box{
@@ -601,6 +604,7 @@ a{
     
     animation:rotate 10s linear infinite;
 }
+/* loginPage */
 
 @keyframes rotate{
     from{
